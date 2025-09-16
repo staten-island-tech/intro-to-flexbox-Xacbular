@@ -14,7 +14,7 @@ body {
 
 .container {
     width: 90vw;
-    background-color: lightgray;
+    background-color: brown;
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
