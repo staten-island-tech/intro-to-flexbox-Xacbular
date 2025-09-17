@@ -1,11 +1,37 @@
 body,
 html,
 body {
-  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+  background-color: #222222;
+}
+
+.top-header {
+  background-color: black;
+  padding: 30px;
+  text-align: center;
+}
+
+.top-header__title {
+  font-size: 120px;
+  color: #f8f5ee;
+  font-family: "Montserrat", cursive;
+  font-optical-sizing: auto;
+  margin-bottom: 0;
+}
+
+.top-header__subheader {
+  font-size: 40px;
+  margin-top: 0;
+  color: #f8f5ee;
+  padding-bottom: 150px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  letter-spacing: 1.5px;
 }
 
 .container {
-  width: 90vw;
+  width: 96vw;
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
@@ -22,8 +48,8 @@ body {
 }
 
 .card {
-  width: 22%;
-  height: 40rem;
+  width: 24%;
+  height: 35rem;
   margin: 3rem 0;
   border: 2px solid black;
   border-radius: 10px;
@@ -36,7 +62,7 @@ body {
 
 .card-img {
   width: 400px;
-  height: 400px;
+  height: 300px;
   margin-left: auto;
   margin-right: auto;
 }
