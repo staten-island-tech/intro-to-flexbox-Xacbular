@@ -45,6 +45,7 @@ body {
   text-align: center;
   height: 80px;
   text-decoration: underline;
+  font-size: 35px;
 }
 
 .card {
@@ -58,11 +59,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  box-shadow: 7px 7px 5px rgb(126, 126, 126);
 }
 
 .card-img {
-  width: 400px;
-  height: 300px;
+  width: 350px;
+  height: 290px;
   margin-left: auto;
   margin-right: auto;
 }
