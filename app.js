@@ -46,3 +46,24 @@
 // const name = "Nelson";
 // console.log(`OMG everyone hates ${name}`);
 //  */
+
+const cards = [
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card"
+  }
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card"
+  }
+];
+
+
