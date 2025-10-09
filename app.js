@@ -54,16 +54,177 @@ const cards = [
     inStock: true,
     brand: "Nvidia",
     img: "images/5070ti.jpg",
-    alt: "50 Series Card"
-  }
+    alt: "50 Series Card",
+  },
   {
     name: "RTX 5070TI",
     price: 299,
     inStock: true,
     brand: "Nvidia",
     img: "images/5070ti.jpg",
-    alt: "50 Series Card"
-  }
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
+  {
+    name: "RTX 5070TI",
+    price: 299,
+    inStock: true,
+    brand: "Nvidia",
+    img: "images/5070ti.jpg",
+    alt: "50 Series Card",
+  },
 ];
 
-
+//create inject function
+function inject(item) {
+  //query the html where we inject the card
+  const container = document.querySelector(".container");
+  container.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="card">
+        <h2 class="card-header">${item.name}</h2>
+        <img class="card-img" src=${item.img} alt="candy" />
+        <div class="card-bottom">
+          <h3 class="card-price">${"$" + item.price}</h3>
+          <button class="style-button">Buy Now</button>
+        </div>
+      </div>`
+    // `<h1 class="card">${item.name}</h1>`
+  );
+}
+cards.forEach((cards) => inject(cards));
