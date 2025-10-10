@@ -218,7 +218,7 @@ function inject(item) {
     "afterbegin",
     `<div class="card">
         <h2 class="card-header">${item.name}</h2>
-        <img class="card-img" src=${item.img} alt="candy" />
+        <img class="card-img" src=${item.img} alt="${item.alt}" />
         <div class="card-bottom">
           <h3 class="card-price">${"$" + item.price}</h3>
           <button class="style-button">Buy Now</button>
