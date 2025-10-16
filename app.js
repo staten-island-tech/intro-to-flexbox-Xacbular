@@ -161,51 +161,51 @@ const cards = [
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3050",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3050.jpg",
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3060TI",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3060ti.jpg",
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3070",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3070.jpg",
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3070TI",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3070ti.png",
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3080",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3080.png",
     alt: "50 Series Card",
   },
   {
-    name: "RTX 5070TI",
+    name: "RTX 3090",
     price: 299,
     inStock: true,
     brand: "Nvidia",
-    img: "images/5070ti.jpg",
+    img: "images/3090.jpg",
     alt: "50 Series Card",
   },
 ];
@@ -228,3 +228,17 @@ function inject(item) {
   );
 }
 cards.forEach((cards) => inject(cards));
+
+function getCards() {
+  const buttons = document.querySelectorAll(".style-button");
+  const btnArr = Array.from(buttons);
+  btnArr.forEach((buttons) =>
+    button.addEventListener("click", function (event) {
+      console.log(
+        event.target.closest(".card").getAttribute("data-id"),
+        event.target.textContent
+      );
+    })
+  );
+}
+getCards();
