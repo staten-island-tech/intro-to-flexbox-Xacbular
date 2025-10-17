@@ -216,7 +216,7 @@ function inject(item) {
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card">
+    `<div class="card" data-name=${item.name} card-price=${item.price}>
         <h2 class="card-header">${item.name}</h2>
         <img class="card-img" src=${item.img} alt="${item.alt}" />
         <div class="card-bottom">
@@ -233,11 +233,8 @@ function getCards() {
   const buttons = document.querySelectorAll(".style-button");
   const btnArr = Array.from(buttons);
   btnArr.forEach((buttons) =>
-    button.addEventListener("click", function (event) {
-      console.log(
-        event.target.closest(".card").getAttribute("data-id"),
-        event.target.textContent
-      );
+    buttons.addEventListener("click", function (event) {
+      console.log(event.target.closest(".card").getAttribute("data-name"));
     })
   );
 }
