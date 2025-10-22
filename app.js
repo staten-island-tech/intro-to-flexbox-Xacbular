@@ -51,213 +51,124 @@ const cards = [
   {
     name: "RTX 5050",
     price: 250,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5050.jpg",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5060",
     price: 300,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5060.png",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5060TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5060TI.jpg",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5070",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5070.png",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5070TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5070ti.jpg",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5080",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5080.png",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 5090",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/5090.png",
-    alt: "50 Series Card",
+    series: "50",
   },
   {
     name: "RTX 6000 PRO",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/6000PRO.jpg",
-    alt: "50 Series Card",
+    series: "60",
   },
   {
     name: "RTX 4060",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4060.png",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 4060TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4060ti.jpg",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 4070",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4070.png",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 4070TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4070ti.jpg",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 4080",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4080.png",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 4090",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/4090.png",
-    alt: "50 Series Card",
+    series: "40",
   },
   {
     name: "RTX 3050",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3050.jpg",
-    alt: "50 Series Card",
+    series: "30",
   },
   {
     name: "RTX 3060TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3060ti.jpg",
-    alt: "50 Series Card",
+    series: "30",
   },
   {
     name: "RTX 3070",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3070.jpg",
-    alt: "50 Series Card",
+    series: "30",
   },
   {
     name: "RTX 3070TI",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3070ti.png",
-    alt: "50 Series Card",
+    series: "30",
   },
   {
     name: "RTX 3080",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3080.png",
-    alt: "50 Series Card",
+    series: "30",
   },
   {
     name: "RTX 3090",
     price: 299,
-    inStock: true,
-    brand: "Nvidia",
     img: "images/3090.jpg",
-    alt: "50 Series Card",
+    series: "30",
   },
 ];
-
-//create inject function
-// function inject(item) {
-//   const container = document.querySelector(".container");
-//   container.insertAdjacentHTML(
-//     "afterbegin",
-//     `<div class="card" data-name="${item.name}" card-price="${item.price}">
-//         <h2 class="card-header">${item.name}</h2>
-//         <img class="card-img" src="${item.img}" alt="${item.alt}" />
-//         <div class="card-bottom">
-//           <h3 class="card-price">$${item.price}</h3>
-//           <button class="style-button">Buy Now</button>
-//         </div>
-//      </div>`
-//   );
-// }
-// cards.forEach((cards) => inject(cards));
-
-// // function getCards() {
-// //   const buttons = document.querySelectorAll(".style-button");
-// //   const btnArr = Array.from(buttons);
-// //   btnArr.forEach((buttons) =>
-// //     buttons.addEventListener("click", function (event) {
-// //       console.log(event.target.closest(".card").getAttribute("data-name"));
-// //     })
-// //   );
-// // }
-
-// function filterCards(series) {
-//   const allCards = document.querySelectorAll(".card");
-
-//   allCards.forEach((card) => {
-//     const cardName = card.getAttribute("data-name");
-//     if (!series || cardName.includes(series)) {
-//       card.style.display = "flex";
-//     } else {
-//       card.style.display = "none";
-//     }
-//   });
-// }
-
-// const filterButtons = document.querySelectorAll(".filter-btn");
-
-// filterButtons.forEach((btn) => {
-//   btn.addEventListener("click", () => {
-//     const series = btn.dataset.series;
-//     filterCards(series);
-//   });
-// });
 
 let cart = [];
 
@@ -267,7 +178,7 @@ function inject(item) {
     "afterbegin",
     `<div class="card" data-name="${item.name}" card-price="${item.price}">
       <h2 class="card-header">${item.name}</h2>
-      <img class="card-img" src="${item.img}" alt="${item.alt}" />
+      <img class="card-img" src="${item.img}" alt="${item.series}" />
       <div class="card-bottom">
         <h3 class="card-price">$${item.price}</h3>
         <button class="style-button">Buy Now</button>
@@ -279,9 +190,9 @@ function inject(item) {
 cards.forEach((card) => inject(card));
 
 // Add-to-cart logic
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("style-button")) {
-    const card = e.target.closest(".card");
+document.addEventListener("click", function (data) {
+  if (data.target.classList.contains("style-button")) {
+    const card = data.target.closest(".card");
     const name = card.getAttribute("data-name");
     const price = card.getAttribute("card-price");
     addToCart(name, price);
@@ -289,11 +200,9 @@ document.addEventListener("click", function (e) {
 });
 
 function addToCart(name, price) {
-  const item = { name: name, price: Number(price) };
+  const item = { name, price };
   cart.push(item);
-
-  console.log(`${name} added to cart!`);
-  console.log("Current cart:", cart);
+  console.log(cart);
 }
 
 function filterCards(series) {
@@ -311,7 +220,7 @@ function filterCards(series) {
 const filterButtons = document.querySelectorAll(".filter-btn");
 filterButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
-    const series = btn.dataset.series;
+    const series = btn.dataset.name;
     filterCards(series);
   });
 });
