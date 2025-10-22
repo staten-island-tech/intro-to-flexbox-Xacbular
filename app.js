@@ -211,31 +211,107 @@ const cards = [
 ];
 
 //create inject function
+// function inject(item) {
+//   const container = document.querySelector(".container");
+//   container.insertAdjacentHTML(
+//     "afterbegin",
+//     `<div class="card" data-name="${item.name}" card-price="${item.price}">
+//         <h2 class="card-header">${item.name}</h2>
+//         <img class="card-img" src="${item.img}" alt="${item.alt}" />
+//         <div class="card-bottom">
+//           <h3 class="card-price">$${item.price}</h3>
+//           <button class="style-button">Buy Now</button>
+//         </div>
+//      </div>`
+//   );
+// }
+// cards.forEach((cards) => inject(cards));
+
+// // function getCards() {
+// //   const buttons = document.querySelectorAll(".style-button");
+// //   const btnArr = Array.from(buttons);
+// //   btnArr.forEach((buttons) =>
+// //     buttons.addEventListener("click", function (event) {
+// //       console.log(event.target.closest(".card").getAttribute("data-name"));
+// //     })
+// //   );
+// // }
+
+// function filterCards(series) {
+//   const allCards = document.querySelectorAll(".card");
+
+//   allCards.forEach((card) => {
+//     const cardName = card.getAttribute("data-name");
+//     if (!series || cardName.includes(series)) {
+//       card.style.display = "flex";
+//     } else {
+//       card.style.display = "none";
+//     }
+//   });
+// }
+
+// const filterButtons = document.querySelectorAll(".filter-btn");
+
+// filterButtons.forEach((btn) => {
+//   btn.addEventListener("click", () => {
+//     const series = btn.dataset.series;
+//     filterCards(series);
+//   });
+// });
+
+let cart = [];
+
 function inject(item) {
-  //query the html where we inject the card
   const container = document.querySelector(".container");
   container.insertAdjacentHTML(
     "afterbegin",
-    `<div class="card" data-name=${item.name} card-price=${item.price}>
-        <h2 class="card-header">${item.name}</h2>
-        <img class="card-img" src=${item.img} alt="${item.alt}" />
-        <div class="card-bottom">
-          <h3 class="card-price">${"$" + item.price}</h3>
-          <button class="style-button">Buy Now</button>
-        </div>
-      </div>`
-    // `<h1 class="card">${item.name}</h1>`
+    `<div class="card" data-name="${item.name}" card-price="${item.price}">
+      <h2 class="card-header">${item.name}</h2>
+      <img class="card-img" src="${item.img}" alt="${item.alt}" />
+      <div class="card-bottom">
+        <h3 class="card-price">$${item.price}</h3>
+        <button class="style-button">Buy Now</button>
+      </div>
+    </div>`
   );
 }
-cards.forEach((cards) => inject(cards));
 
-function getCards() {
-  const buttons = document.querySelectorAll(".style-button");
-  const btnArr = Array.from(buttons);
-  btnArr.forEach((buttons) =>
-    buttons.addEventListener("click", function (event) {
-      console.log(event.target.closest(".card").getAttribute("data-name"));
-    })
-  );
+cards.forEach((card) => inject(card));
+
+// Add-to-cart logic
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("style-button")) {
+    const card = e.target.closest(".card");
+    const name = card.getAttribute("data-name");
+    const price = card.getAttribute("card-price");
+    addToCart(name, price);
+  }
+});
+
+function addToCart(name, price) {
+  const item = { name: name, price: Number(price) };
+  cart.push(item);
+
+  console.log(`${name} added to cart!`);
+  console.log("Current cart:", cart);
 }
-getCards();
+
+function filterCards(series) {
+  const allCards = document.querySelectorAll(".card");
+  allCards.forEach((card) => {
+    const cardName = card.getAttribute("data-name");
+    if (!series || cardName.includes(series)) {
+      card.style.display = "flex";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const series = btn.dataset.series;
+    filterCards(series);
+  });
+});
