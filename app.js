@@ -209,7 +209,8 @@ function filterCards(series) {
   const allCards = document.querySelectorAll(".card");
   allCards.forEach((card) => {
     const cardName = card.getAttribute("data-name");
-    if (!series || cardName.includes(series)) {
+    const digits = cardName.slice(4, 6);
+    if (!series || digits.includes(series)) {
       card.style.display = "flex";
     } else {
       card.style.display = "none";

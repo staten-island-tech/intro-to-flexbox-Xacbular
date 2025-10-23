@@ -122,3 +122,14 @@ body {
   box-shadow: 0 1px 4px rgb(0 0 0 / 30%); /* Keep the original shadow effect */
   transition: 0.3s;
 }
+
+.cart {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: auto;
+}
