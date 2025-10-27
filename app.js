@@ -50,97 +50,97 @@
 const cards = [
   {
     name: "RTX 5050",
-    price: 250,
+    price: 244,
     img: "images/5050.jpg",
     series: "50",
   },
   {
     name: "RTX 5060",
-    price: 300,
+    price: 290,
     img: "images/5060.png",
     series: "50",
   },
   {
     name: "RTX 5060TI",
-    price: 299,
+    price: 379,
     img: "images/5060TI.jpg",
     series: "50",
   },
   {
     name: "RTX 5070",
-    price: 299,
+    price: 499,
     img: "images/5070.png",
     series: "50",
   },
   {
     name: "RTX 5070TI",
-    price: 299,
+    price: 749,
     img: "images/5070ti.jpg",
     series: "50",
   },
   {
     name: "RTX 5080",
-    price: 299,
+    price: 929,
     img: "images/5080.png",
     series: "50",
   },
   {
     name: "RTX 5090",
-    price: 299,
+    price: 1999,
     img: "images/5090.png",
     series: "50",
   },
   {
     name: "RTX 6000 PRO",
-    price: 299,
+    price: 8999,
     img: "images/6000PRO.jpg",
     series: "60",
   },
   {
     name: "RTX 4060",
-    price: 299,
+    price: 259,
     img: "images/4060.png",
     series: "40",
   },
   {
     name: "RTX 4060TI",
-    price: 299,
+    price: 329,
     img: "images/4060ti.jpg",
     series: "40",
   },
   {
     name: "RTX 4070",
-    price: 299,
+    price: 419,
     img: "images/4070.png",
     series: "40",
   },
   {
     name: "RTX 4070TI",
-    price: 299,
+    price: 739,
     img: "images/4070ti.jpg",
     series: "40",
   },
   {
     name: "RTX 4080",
-    price: 299,
+    price: 949,
     img: "images/4080.png",
     series: "40",
   },
   {
     name: "RTX 4090",
-    price: 299,
+    price: 1599,
     img: "images/4090.png",
     series: "40",
   },
   {
     name: "RTX 3050",
-    price: 299,
+    price: 179,
     img: "images/3050.jpg",
     series: "30",
   },
   {
     name: "RTX 3060TI",
-    price: 299,
+    price: 399,
     img: "images/3060ti.jpg",
     series: "30",
   },
@@ -152,19 +152,19 @@ const cards = [
   },
   {
     name: "RTX 3070TI",
-    price: 299,
+    price: 499,
     img: "images/3070ti.png",
     series: "30",
   },
   {
     name: "RTX 3080",
-    price: 299,
+    price: 699,
     img: "images/3080.png",
     series: "30",
   },
   {
     name: "RTX 3090",
-    price: 299,
+    price: 1500,
     img: "images/3090.jpg",
     series: "30",
   },
@@ -200,9 +200,14 @@ document.addEventListener("click", function (data) {
 });
 
 function addToCart(name, price) {
-  const item = { name, price };
+  const item = { name: name, price: price };
   cart.push(item);
-  console.log(cart);
+  const cartItems = document.querySelector(".cart");
+  cartItems.insertAdjacentHTML(
+    "beforeend",
+    `<h3 class="cart-items">${name} $${price}</h3>`
+  );
+  calculateTotal();
 }
 
 function filterCards(series) {
@@ -225,3 +230,16 @@ filterButtons.forEach((btn) => {
     filterCards(series);
   });
 });
+
+function calculateTotal() {
+  let total = 0;
+  cart.forEach((item) => {
+    total += parseFloat(item.price);
+  });
+  const cartTotal = document.querySelector(".cart-total");
+  cartTotal.replaceChildren();
+  cartTotal.insertAdjacentHTML(
+    "beforeend",
+    `<h3 class="cart-items">Total Price: $${total}</h3>`
+  );
+}

@@ -117,19 +117,67 @@ body {
 }
 
 .style-button:hover {
-  /* Add this rule for the hover effect */
   transform: scale(1.1);
-  box-shadow: 0 1px 4px rgb(0 0 0 / 30%); /* Keep the original shadow effect */
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
   transition: 0.3s;
 }
 
 .cart {
-  text-align: center;
+  font-family: "Montserrat", sans-serif;
   padding: 20px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
   margin-top: auto;
+  color: black;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+}
+
+.cart-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-title {
+  font-size: 30px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.filter-btn {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  transition: transform 200ms, background 200ms;
+  background: white;
+  color: #000000;
+  box-shadow: 0 0 0 3px #000000 inset;
+}
+.filter-btn:hover {
+  transform: translateY(2px);
+}
+
+.btn-bgc {
+  padding-top: 20px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
+.cart-total {
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+  margin-top: auto;
+  color: black;
+  background-color: white;
+  width: 50%;
+  margin: auto;
 }
